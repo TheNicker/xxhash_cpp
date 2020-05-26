@@ -155,13 +155,13 @@ namespace xxh
 		{
 			using type = __m128i;
 		};
-
+#if defined(__AVX2__)
 		template <>
 		struct vec_type<256>
 		{
 			using type = __m256i;
 		};
-
+#endif
 		/* Rationale
 		* On the surface level uint_type appears to be pointless,
 		* as it is just a copy of hash_type. They do use the same types,
